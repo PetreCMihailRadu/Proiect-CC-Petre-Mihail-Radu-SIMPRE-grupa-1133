@@ -2,6 +2,7 @@ import { getRecords } from "@/utils/recordsFunctions";
 import React, { useEffect, useState } from "react";
 import Spinner from "./Spinner";
 import { deleteRecord } from "@/utils/recordsFunctions";
+import { useRouter } from "next/router";
 
 const MainPage = () => {
     const router = useRouter();
