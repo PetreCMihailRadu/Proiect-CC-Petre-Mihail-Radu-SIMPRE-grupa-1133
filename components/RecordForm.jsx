@@ -14,9 +14,18 @@ const RecordForm = (props) => {
         router.push("/");
     }
 
+    const handleToggleCompletion = () => {
+      // Invertim valoarea actuala a statusului completed
+      const newCompletedValue = !data.completed;
+      
+      // Actualizam starea locala cu noul status completat
+      setData({ ...data, completed: newCompletedValue });
+  };
+
     return (
         <div className="p-4">
     <div className="flex flex-col mx-auto max-w-80 border p-4 shadow-sn gap-4 w-full">
+      <div className="text-center font-bold text-xl">{entry._id ? 'Update' : 'Create'} your to do list</div>
 <div>
     <label 
     htmlFor="title" 
@@ -59,10 +68,10 @@ placeholder="Write your thoughts here..."
         Status task
         </label>
     <input 
-    type="completed" 
+    type="checkbox" 
     id="completed"
-    value={data.completed} 
-    onChange={(e) => handleChange('completed', e.target.value)}
+    checked={data.completed} 
+    onChange={handleToggleCompletion}
     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
     placeholder="Status task" 
     required 

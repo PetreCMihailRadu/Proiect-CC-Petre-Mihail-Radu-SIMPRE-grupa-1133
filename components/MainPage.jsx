@@ -46,6 +46,10 @@ const MainPage = () => {
     if (isLoading) return <Spinner />;
 
     return (
+        <div className="container mx-auto">
+            <div className="text-center font-bold text-4xl mb-4">
+                Your to do list
+                </div>
         <div className="p-4 flex flex-wrap gap-4">
         {data?.map((record) => (
  <div 
@@ -58,6 +62,8 @@ const MainPage = () => {
  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
     {record.content}
  </p>
+ 
+ <div className="flex justify-between items-center mb-2">
  <button
   type="button"
   onClick={() => handleEditRecord(record._id)} 
@@ -72,8 +78,18 @@ const MainPage = () => {
  >
     Delete
     </button>
+
+    <button
+     type="button"
+     className={`font-medium rounded-lg text-sm px-5 py-2.5 text-center ${record.completed ? 'bg-green-500' : 'bg-gray-500'} text-white`}
+     onClick={() => handleToggleCompletion(record._id)}
+    >
+        {record.completed ? 'Completed' : 'Incomplete'}
+    </button>
+</div>
 </div>
         ))}
+        </div>
         </div>
     );
 };
