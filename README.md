@@ -7,7 +7,7 @@ NUME: Petre Mihail Radu
 GRUPA: 1133
 
 Link video pentru prezentarea proiectului:
-Proiect CC Petre Mihail Radu, SIMPRE, grupa 1133 (youtube.com)
+[Proiect CC Petre Mihail Radu, SIMPRE, grupa 1133 (youtube.com)](https://www.youtube.com/watch?v=ocECaThUF8c)
 Link publicare proiect:
 proiect-cc-petre-mihail-radu-simpre-grupa-1133.vercel.app
 Link GitHub:
